@@ -19,7 +19,6 @@ services:
     networks:
       - test-project-net
     environment:
-      - LOGSTASH_PATH=elk:5044
       - LOGSTASH_ENABLED=true
       - APP_LOG_LEVEL=error
       - APP_KEY=9SroAE30Xqf1RktqG3gjFGscr4vfwAuq
@@ -54,23 +53,6 @@ services:
       - test-project-net
     ports:
       - 16323:6379
-#  jaeger:
-#    image: jaegertracing/all-in-one:latest
-#    container_name: test-project-jaeger
-#    restart: always
-#    ports:
-#      - 16322:16686
-#    networks:
-#      - test-project-net
-#  elk:
-#    image: sebp/elk
-#    container_name: test-project-elk
-#    restart: always
-#    networks:
-#      - test-project-net
-#    ports:
-#      - 16320:5601
-#      - 16321:9200
 networks:
   test-project-net:
     driver: bridge
