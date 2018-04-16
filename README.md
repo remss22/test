@@ -1,7 +1,6 @@
 # Как запустить среду
 1. Перейти в папку docker
-1. Выполнить docker-compose build
-1. Выполнить docker-compose up
+1. Выполнить ```docker-compose up -d```
 # Настраиваем окружение
 1. Создаем базу 
   - Выполнить ```docker exec -it test-project-mysql bash```
