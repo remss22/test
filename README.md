@@ -9,7 +9,7 @@
 2. Загружаем вендор
   - Выполнить ```docker exec -it test-project-fpm-1 bash```
   - Выполнить ```cd /home/eyurkin/source && composer install```
-  - Выполнить ```php artisan migrate```
+  - Выполнить ```php artisan migrate && php artisan cache:clear && php artisan config:cache```
   - Выйти из контейнера (exit)
 3. Проверяем 
 http://127.0.0.1:16326/
