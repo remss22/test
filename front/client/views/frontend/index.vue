@@ -73,6 +73,12 @@
         return Names[key]
       })
       this.prepareDataToNormalFormat(this.readData(), this.names)
+    },
+    mounted () {
+      setInterval(function () {
+        this.data = this.readData()
+        console.log('read file: content ', this.data)
+      }.bind(this), 5000)
     }
   }
 </script>
