@@ -4,6 +4,8 @@ services:
   nginx:
     build: nginx
     container_name: test-project-nginx
+    volumes:
+      - ../:/home/eyurkin/source
     networks:
       - test-project-net
     ports:

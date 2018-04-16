@@ -14,7 +14,3 @@
     return view('welcome');
 })->where('all', '.+');
 
-
-Route::get('/', function () {
-    return view('welcome');
-});

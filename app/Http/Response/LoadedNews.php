@@ -9,6 +9,8 @@
 namespace App\Http\Response;
 
 
+use Illuminate\Support\Facades\Config;
+
 class LoadedNews
 {
 
@@ -59,7 +61,7 @@ class LoadedNews
         return [
             'id'      => $this->id,
             'title'   => $this->title,
-            'preview' => mb_substr($this->preview, 0, 200),
+            'preview' => html_entity_decode(mb_substr($this->preview, 0, Config::get('rbc.preview_limit'))),
             'url'     => $this->url,
             'time'    => $this->time,
         ];
