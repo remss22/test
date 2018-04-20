@@ -48,16 +48,12 @@ class LastNewsResponse extends AbstractResponseParser
      */
     private function parseUrl(string $html)
     {
-        $dom = new \DOMDocument();
-        $dom->loadHTML($html);
-        $list = $dom->getElementsByTagName('a');
+        $dom = str_get_html($html);
+        $links = $dom->find('a.news-feed__item');
         $url = null;
-        if ($list->length > 0) {
-            /** @var \DOMElement $item */
-            foreach ($list as $item) {
-                $url = $item->getAttribute('href');
-                break;
-            }
+        foreach ($links as $link) {
+            $url = $link->href;
+            break;
         }
         return $url;
     }

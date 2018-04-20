@@ -62,8 +62,8 @@ class FullNewsResponse extends AbstractResponseParser
     private function getHtmlParseResult(string $className, string $property, $default = null)
     {
         $result = null;
-        foreach ($this->parsedHtml->find($className) as $htmlImg) {
-            $result = trim($htmlImg->$property);
+        foreach ($this->parsedHtml->find($className) as $item) {
+            $result = trim($item->$property);
             break;
         }
 
