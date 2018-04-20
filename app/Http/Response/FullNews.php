@@ -58,7 +58,7 @@ class FullNews
     {
         return [
             'id'    => $this->id,
-            'title' => $this->title,
+            'title' => html_entity_decode($this->title),
             'text'  => html_entity_decode($this->text),
             'url'   => $this->url,
             'image' => $this->image,

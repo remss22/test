@@ -60,7 +60,7 @@ class LoadedNews
     {
         return [
             'id'      => $this->id,
-            'title'   => $this->title,
+            'title'   => html_entity_decode($this->title),
             'preview' => html_entity_decode(mb_substr($this->preview, 0, Config::get('rbc.preview_limit'))),
             'url'     => $this->url,
             'time'    => $this->time,
